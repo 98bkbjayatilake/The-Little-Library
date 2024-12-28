@@ -1,0 +1,64 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+
+# Maven & Gradle Build Files
+/target/
+/build/
+/out/
+
+# IntelliJ IDEA specific files
+.idea/
+/*.iml
+/*.ipr
+/*.iws
+
+
+
+# VS Code specific files
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables and secrets
+.env
+application.properties
+application.yml
+application-local.properties
+application-local.yml
+
+# Git ignore for node_modules (if frontend exists in the project)
+node_modules/
+
+# Generated files
+*.war
+*.jar
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+/coverage/
+*.lcov
+
+# Test results
+/test-results/
+
+# Specific to Windows
+Thumbs.db
+
+# Sensitive credentials
+secrets.properties
+.env
+
+
+
+
