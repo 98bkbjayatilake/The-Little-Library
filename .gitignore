@@ -13,9 +13,7 @@
 
 # IntelliJ IDEA specific files
 .idea/
-/*.iml
-/*.ipr
-/*.iws
+
 
 # Eclipse specific files
 .project
