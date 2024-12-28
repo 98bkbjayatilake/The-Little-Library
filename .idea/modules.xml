@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BookshopApp_for_test_spring ioc and DI.iml" filepath="$PROJECT_DIR$/.idea/BookshopApp_for_test_spring ioc and DI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/BookshopApp_for_test_spring_ioc_and_DI.iml" filepath="$PROJECT_DIR$/.idea/BookshopApp_for_test_spring_ioc_and_DI.iml" />
     </modules>
   </component>
 </project>
