@@ -32,6 +32,8 @@ public abstract class BaseEntity<T>{
         if(this==o)return true;
     //Strict type checking
         if(o==null || getClass()!=o.getClass())return false;
+        // Check if the object is an instance of BaseEntity
+        //if (!(o instanceof BaseEntity<?>)) return false;
     /*
     *
     * The casting (BaseEntity<?>) explicitly tells the compiler:"Trust me,I know this object is a BaseEntity,even though it was passed as an object "

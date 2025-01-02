@@ -1,31 +1,45 @@
 package org.bimsara.SpringBookShopApp.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import java.util.Set;
 import java.util.HashSet;
+
 @Entity
 public class Book extends BaseEntity<String>{
-    private int ISBN;
-    private String title;
+    @JsonProperty("isbn")
+    @Column(name = "\"isbn\"")
+    private String isbn;
+
+    @JsonProperty("bookTitle")  // Map JSON field "bookTitle" to this field
+    @Column(name = "\"bookTitle\"")
+    private String bookTitle;
+    @JsonProperty("unitPrice")
+    @Column(name = "\"unitPrice\"")
     private float unitPrice;
 
     /*
     * authors-Field mean to hold unique objects of type author
     */
+    @JsonIgnore
     @ManyToMany(mappedBy = "books")
     Set<Author> authors=new HashSet<>();
+    @JsonIgnore
     @ManyToMany(mappedBy = "books")
     Set<Order> orders=new HashSet<>();
-
+    @JsonIgnore
     @OneToOne(mappedBy = "book")
     private Inventory inventory;
 
     public Book(){
 
     }
-    public Book(int ISBN,String title){
-    this.ISBN=ISBN;
-    this.title=title;
+    public Book(String ISBN,String bookTitle,float unitPrice){
+    this.isbn=ISBN;
+    this.bookTitle=bookTitle;
+    this.unitPrice=unitPrice;
     }
 
 /*
@@ -40,11 +54,8 @@ public class Book extends BaseEntity<String>{
     * .replaceAll-This method replaces all occurrences of the matched pattern(whitespace) with an underscore character(_)
     * The result is that all whitespace in the title is replaced with underscores.
      */
-    this.id=ISBN+"_"+title.replaceAll("\\s+","_").substring(0,10);
+    this.id=isbn+"_"+bookTitle.replaceAll("\\s+","_").substring(0,10);
    }
-
-
-
 
     /*
     *getter and setter for Authors property
